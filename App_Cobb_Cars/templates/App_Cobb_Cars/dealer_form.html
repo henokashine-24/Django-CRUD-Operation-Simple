@@ -1,0 +1,9 @@
+
+
+<h1> Form to fill Out ...</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">  <a href="{% url 'dealer-view' %}"><input type="button" value="Home">
+</form>

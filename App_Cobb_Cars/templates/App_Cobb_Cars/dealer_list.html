@@ -1,0 +1,57 @@
+
+<h1 style="color: rgb(140, 0, 255);"> Cars List </h1>
+
+{% if request.user.is_authenticated %}
+
+<p> {{request.user}} is logged in </p>
+
+<a href="{% url 'logout' %}"> <input type="button"value="Logout"></a>
+
+{% else %}
+
+<a href="{% url 'login' %}"> <input type="button" value="Login"></a>
+
+{% endif %}
+
+<br>
+<br>
+
+<h3 style="color: blue;"> Car Dealer Website </h3>
+
+
+<table border="1">
+
+    <tr>
+
+    <th>make</th>
+    <th>model</th>
+    <th>year</th>
+    <th>New</th>
+    <th>used</th>
+    <th>finaced</th>
+    <th>cash</th>
+    <th></th>
+    <th></th>
+</tr>
+
+{% for item in dealer %}
+
+    <tr>
+        
+   <td> {{item.make}}</td>
+   <td> {{item.modeltype}} </td>
+   <td>{{item.year}}</td>
+   <td>{{item.new}}</td>
+   <td>{{item.used}}</td>
+   <td>{{item.finaced}}</td>
+   <td>{{item.cash}}</td>
+   <td><a href="{% url 'dealer-update' item.id %}">Edit </a></td>
+   <td><a href="{% url 'dealer-delete' item.id %}">Delete</a></td>
+
+    </tr>
+
+    {% endfor %}
+
+</table> <br><br>
+
+<a href="{% url 'dealer-create' %}"><input type="button" value="Form Home">

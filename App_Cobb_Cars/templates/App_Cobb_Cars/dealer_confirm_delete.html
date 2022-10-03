@@ -1,0 +1,10 @@
+
+<h1 style="color: red;"> are you sure you want to delete {{dealer}}</h1>
+
+<form method="POST">
+    {%csrf_token %}
+
+<input type="submit" value="Delete">  <a href="{% url 'dealer-view' %}"><input type="button" value="Home"></a>
+
+
+</form>
