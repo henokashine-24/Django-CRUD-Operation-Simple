@@ -1,4 +1,4 @@
-# Django-CRUD-Operation-Simple
+# Simple Django-CRUD-Operation
 
 # here i created a simple Django-CRUD operation using classed based views 
 # this simple website enable us to add and remove item and edit item 
